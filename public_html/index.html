@@ -67,7 +67,7 @@
                         };
 
 function getPins() {
-  
+  document.getElementById('pin--boards').disabled = true;
   var params = {
   fields: 'id,image,name'
 };
@@ -92,7 +92,7 @@ function getPins() {
     }
     nimgdiv.setAttribute('id','boardimg--' + i);
     nimgdiv.appendChild(divt);
-    document.body.appendChild(nimgdiv);
+    document.getElementByID('container').appendChild(nimgdiv);
       
         
     };
