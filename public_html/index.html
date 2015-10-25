@@ -92,8 +92,9 @@ function getPins() {
     nimgdiv.appendChild(nimg);
     };
     nimgdiv.setAttribute("class","col-md-4");
-    divt = "<h2>" + divt + "</h2>";
-    nimgdiv.appendChild(divt);
+    h2 = document.createElement('h2');
+    divt_h2 = h2.appendChild(divt);
+    nimgdiv.appendChild(divt_h2);
     document.getElementById('boardresults').appendChild(nimgdiv);
       
         
