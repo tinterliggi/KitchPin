@@ -57,7 +57,7 @@
            boardbutton.setAttribute('class','btn btn-primary btn-lg')
            boardbutton.innerText = 'Show All Boards';
            boardbutton.setAttribute('onClick','javascript:getPins()');
-           document.getElementById('pinbuttons').appendChild(boardbutton);
+           document.getElementById('button_p').appendChild(boardbutton);
              
           
            
@@ -150,8 +150,8 @@ if (!session) {
       <div class="container" id="pinbuttons">
         <h1 id="helloworld">Hello, world!</h1>
         <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-        <p><button class="btn btn-primary btn-lg" id='pinterestLogin' onclick="pinlogin()">Pinterest Login</button></p>
-        <span id='pin-result'></span>
+        <p id="button_p"><button class="btn btn-primary btn-lg" id='pinterestLogin' onclick="pinlogin()">Pinterest Login</button></p>
+        <!--<span id='pin-result'></span>-->
       </div>
     </div>
 
