@@ -81,7 +81,7 @@ function getPins() {
  //  var ndiv = document.createElement('div');
   var divt= document.createTextNode(pins[i].name);
     var img = pins[i].image;
-        var nimgdiv = document.createElement('div');
+        var nimgdiv = document.createElement('span');
     if(img['60x60'].url){
     console.log(img['60x60'].url);  
     var nimg = document.createElement('img');
@@ -92,7 +92,7 @@ function getPins() {
     }
     nimgdiv.setAttribute('id','boardimg--' + i);
     nimgdiv.appendChild(divt);
-    document.getElementByID('container').appendChild(nimgdiv);
+    document.getElementByID('boardresults').appendChild(nimgdiv);
       
         
     };
@@ -158,21 +158,8 @@ if (!session) {
     <div class="container" id="container">
       <!-- Example row of columns -->
       <div class="row">
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">HAHA ! View details &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-       </div>
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
+        <div class="col-md-4" id="boardresults">
+             
       </div>
 
       <hr>
