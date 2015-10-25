@@ -20,7 +20,97 @@
         </style>
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/main.css">
+<script>
+    window.pAsyncInit = function() {
+        PDK.init({
+            appId: "4797219082101327943",
+            cookie: true
+        });
+    };
 
+    (function(d, s, id){
+        var js, pjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//assets.pinterest.com/sdk/sdk.js";
+        pjs.parentNode.insertBefore(js, pjs);
+    }(document, 'script', 'pinterest-jssdk'));
+    
+      
+       
+    function pinlogin() {PDK.login({scope : 'read_public, write_public'}, function(session) {
+  if (!session) {
+    alert('The user chose not to grant permissions or closed the pop-up');
+  } else {
+    console.log('Thanks for authenticating. Getting your information...');
+    PDK.me(function(response) {
+      if (!response || response.error) {
+        alert('Oops, there was a problem getting your information');
+      } else {
+        console.log('Welcome,  ' + response.data.first_name + '!');
+        var displayname = 'Welcome ' + response.data.first_name + ' ' + response.data.last_name + '!'
+           document.getElementById('pin-result').innerHTML = displayname; 
+           document.getElementById('pinterestLogin').disabled = true;
+           document.getElementById('pinterestLogin').innerHTML = "Logged In";
+           var boardbutton = document.createElement('button');
+           boardbutton.setAttribute('id','pin--boards');
+           boardbutton.innerText = 'Show All Boards';
+           boardbutton.setAttribute('onClick','javascript:getPins()');
+           document.body.appendChild(boardbutton);
+             
+          
+           
+                                                    }
+                                            });
+                                        }
+                                 });
+                        };
+
+function getPins() {
+  
+  var params = {
+  fields: 'id,image,name'
+};
+          PDK.me('boards', params
+  , function(response) {
+  if (!response || response.error) {
+    alert('Error occurred');
+  } else {
+    var pins = response.data;
+    for(var i=0; i < pins.length; i++) {
+ //  var ndiv = document.createElement('div');
+  var divt= document.createTextNode(pins[i].name);
+    var img = pins[i].image;
+        var nimgdiv = document.createElement('div');
+    if(img['60x60'].url){
+    console.log(img['60x60'].url);  
+    var nimg = document.createElement('img');
+    nimg.setAttribute("src",img['60x60'].url) ;
+    nimg.style.verticalAlign="middle";
+    nimg.style.padding="5px";
+    nimgdiv.appendChild(nimg);
+    }
+    nimgdiv.setAttribute('id','boardimg--' + i);
+    nimgdiv.appendChild(divt);
+    document.body.appendChild(nimgdiv);
+      
+        
+    };
+    
+  }
+            });        
+        }
+
+    
+  function getSession() {  
+    var session = PDK.getSession();
+if (!session) {
+  alert('No session has been set.');
+} else {
+    console.log(session.data.accesscode);
+}
+};
+</script>
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     </head>
     <body>
@@ -55,6 +145,10 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
+          
+
+<button id='pinterestLogin' onclick="pinlogin()">Pinterest Login</button>
+<span id='pin-result'></span>
         <h1>Hello, world!</h1>
         <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
         <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
