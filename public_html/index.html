@@ -82,7 +82,7 @@ function getPins() {
  //  var ndiv = document.createElement('div');
   var divt= document.createTextNode(pins[i].name);
     var img = pins[i].image;
-        var nimgdiv = document.createElement('span');
+        var nimgdiv = document.createElement('div');
     if(img['60x60'].url){
     console.log(img['60x60'].url);  
     var nimg = document.createElement('img');
@@ -91,7 +91,7 @@ function getPins() {
     nimg.style.padding="5px";
     nimgdiv.appendChild(nimg);
     };
- 
+    nimgdiv.setAttribute("class","col-md-4");
     nimgdiv.appendChild(divt);
     document.getElementById('boardresults').appendChild(nimgdiv);
       
