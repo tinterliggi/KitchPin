@@ -54,6 +54,7 @@
            document.getElementById('pinterestLogin').innerHTML = "Logged In";
            var boardbutton = document.createElement('button');
            boardbutton.setAttribute('id','pin--boards');
+           boardbutton.setAttribute('class','btn btn-primary btn-lg')
            boardbutton.innerText = 'Show All Boards';
            boardbutton.setAttribute('onClick','javascript:getPins()');
            document.getElementById('boardresults').appendChild(boardbutton);
@@ -89,10 +90,10 @@ function getPins() {
     nimg.style.verticalAlign="middle";
     nimg.style.padding="5px";
     nimgdiv.appendChild(nimg);
-    }
-    nimgdiv.setAttribute('id','boardimg--' + i);
+    };
+ 
     nimgdiv.appendChild(divt);
-    document.getElementByID('boardresults').appendChild(nimgdiv);
+    document.getElementById('boardresults').appendChild(nimgdiv);
       
         
     };
