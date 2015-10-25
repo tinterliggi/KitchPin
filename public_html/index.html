@@ -94,7 +94,7 @@ function getPins() {
     nimgdiv.setAttribute("class","col-md-4");
     var h2 = document.createElement('h2');
     h2.appendChild(divt);
-    nimgdiv.appendChild(divt);
+    nimgdiv.appendChild(h2);
     document.getElementById('boardresults').appendChild(nimgdiv);
       
         
@@ -150,7 +150,7 @@ if (!session) {
       <div class="container" id="pinbuttons">
         <h1 id="helloworld">Hello, world!</h1>
         <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-        <p><a class="btn btn-primary btn-lg" id='pinterestLogin' onclick="pinlogin()" href="#" role="button">Pinterest Login</a></p>
+        <p><button class="btn btn-primary btn-lg" id='pinterestLogin' onclick="pinlogin()">Pinterest Login</button></p>
         <span id='pin-result'></span>
       </div>
     </div>
