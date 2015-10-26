@@ -10,7 +10,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/font-awesome.css">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <style>
             body {
@@ -58,7 +58,7 @@
            boardbutton.innerText = 'Show All Boards';
            boardbutton.setAttribute('onClick','javascript:getPins()');
            var faarrow = document.createElement('i');
-           faarrow.setAttribute('class','fa fa-arrow-right fa-3x');
+           faarrow.setAttribute('class','icon-long-arrow-right icon-3x');
            faarrow.setAttribute('padding','5px');
            document.getElementById('button_p').appendChild(faarrow);
            document.getElementById('button_p').appendChild(boardbutton);
@@ -153,8 +153,8 @@ if (!session) {
     <div class="jumbotron">
         
       <div class="container" id="pinbuttons">
-        <h1 id="helloworld">Hello, world!</h1>
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+          <h1 id="helloworld">Hello, world!</h1>
+               <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
         <p id="button_p"><button class="btn btn-primary btn-lg" id='pinterestLogin' onclick="pinlogin()">Pinterest Login</button></p>
         <!--<span id='pin-result'></span>-->
       </div>
